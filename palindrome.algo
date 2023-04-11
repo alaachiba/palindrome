@@ -1,0 +1,24 @@
+ALGORITHM palindromes
+VAR
+    ch1: string
+BEGIN
+
+FUNCTION Palindrome(ch:string) : Boolean
+VAR
+    n:integer
+    rslt: Boolean
+BEGIN
+    n:= ch.length
+    IF ((ch= "") or (n=1)) THEN
+        rslt:=True
+    ELSE_IF (ch [0] = ch [n -1]) THEN
+        Palindrome (ch [1:n-2])
+    ELSE
+        rslt:=False
+    END_IF
+    RETURN rslt ;
+END
+    write("tapper une chaine")
+    read(ch1)
+    Palindrome(ch1)
+END
